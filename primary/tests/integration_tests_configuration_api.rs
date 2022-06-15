@@ -29,7 +29,7 @@ async fn test_new_network_info() {
     let store = NodeStorage::reopen(temp_dir());
 
     let (tx_new_certificates, rx_new_certificates) = channel(CHANNEL_CAPACITY);
-    let (_tx_feedback, rx_feedback) = channel(CHANNEL_CAPACITY);
+    let (tx_feedback, rx_feedback) = channel(CHANNEL_CAPACITY);
 
     Primary::spawn(
         name.clone(),
@@ -42,6 +42,7 @@ async fn test_new_network_info() {
         /* tx_consensus */ tx_new_certificates,
         /* rx_consensus */ rx_feedback,
         /* dag */ Some(Arc::new(Dag::new(&committee, rx_new_certificates).1)),
+        tx_feedback,
     );
 
     // Wait for tasks to start

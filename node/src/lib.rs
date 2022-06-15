@@ -132,7 +132,7 @@ impl Node {
                 parameters.clone(),
                 execution_state,
                 rx_new_certificates,
-                tx_feedback,
+                tx_feedback.clone(),
                 tx_confirmation,
             )
             .await?;
@@ -151,6 +151,7 @@ impl Node {
             /* tx_consensus */ tx_new_certificates,
             /* rx_consensus */ rx_feedback,
             /* dag */ dag,
+            tx_feedback,
         );
 
         Ok(primary_handle)
