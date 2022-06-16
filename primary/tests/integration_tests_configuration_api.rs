@@ -42,7 +42,7 @@ async fn test_new_network_info() {
         /* tx_consensus */ tx_new_certificates,
         /* rx_consensus */ rx_feedback,
         /* dag */ Some(Arc::new(Dag::new(&committee, rx_new_certificates).1)),
-        tx_feedback,
+        /* tx_committed_certificates */ tx_feedback,
     );
 
     // Wait for tasks to start
