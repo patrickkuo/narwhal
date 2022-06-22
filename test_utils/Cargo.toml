@@ -29,5 +29,5 @@ crypto = { path = "../crypto" }
 types = { path = "../types" }
 worker = { path = "../worker"}
 
-store = { git = "https://github.com/mystenlabs/mysten-infra.git", package = "typed-store", rev = "7c247967e5a5abd59ecaa75bc62b05bcdf4503fe" }
-mysten-network = { git = "https://github.com/mystenlabs/mysten-infra.git", rev = "7c247967e5a5abd59ecaa75bc62b05bcdf4503fe" }
+store = { git = "https://github.com/bmwill/mysten-infra.git", package = "typed-store", rev = "52b97c56bed64535cda99b8d21a802e1e7c5a67f" }
+mysten-network = { git = "https://github.com/bmwill/mysten-infra.git", rev = "52b97c56bed64535cda99b8d21a802e1e7c5a67f" }
